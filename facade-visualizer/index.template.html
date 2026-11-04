@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Perfect Construction — Brownstone Visualizer & Ballpark Estimator (Demo)</title>
+<style>
+  :root{
+    --ink:#221812; --brown:#4a2e20; --brown2:#6d452c; --tan:#c9a37e; --paper:#faf6f1;
+    --card:#ffffff; --line:#e5d9cb; --accent:#b4551f; --accent-d:#96450f;
+    --ok:#1e7a3c; --mut:#7a6a5c; --radius:16px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.45;-webkit-font-smoothing:antialiased}
+  .ribbon{background:var(--ink);color:#f3e3cf;text-align:center;font-size:12px;letter-spacing:.14em;padding:7px 10px;font-weight:600}
+  header.top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 18px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+  .brand{font-weight:800;letter-spacing:.02em;font-size:17px;color:var(--brown)}
+  .brand small{display:block;font-weight:600;font-size:11px;color:var(--mut);letter-spacing:.08em}
+  a.callbtn{background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:10px 14px;border-radius:999px;white-space:nowrap}
+  a.callbtn:active{background:var(--accent-d)}
+  main{max-width:640px;margin:0 auto;padding:20px 16px 40px}
+  h1{font-size:27px;line-height:1.18;color:var(--brown);letter-spacing:-.01em}
+  .sub{color:var(--mut);font-size:15px;margin-top:8px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin-top:20px;box-shadow:0 1px 3px rgba(74,46,32,.06)}
+  .step{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .stepnum{background:var(--brown);color:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;flex:0 0 auto}
+  .step h2{font-size:18px;color:var(--brown)}
+  /* slider */
+  .ba{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:3/4;background:#ddd;touch-action:none;user-select:none;-webkit-user-select:none}
+  .ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%;pointer-events:none}
+  .ba .afterWrap{position:absolute;inset:0;overflow:hidden}
+  .ba .afterWrap img{width:100%}
+  .ba .divider{position:absolute;top:0;bottom:0;width:3px;background:#fff;box-shadow:0 0 8px rgba(0,0,0,.45);transform:translateX(-50%);z-index:3}
+  .ba .knob{position:absolute;top:50%;width:44px;height:44px;border-radius:50%;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.4);transform:translate(-50%,-50%);z-index:4;display:flex;align-items:center;justify-content:center;color:var(--brown);font-weight:900;font-size:15px;letter-spacing:-1px}
+  .tag{position:absolute;top:10px;font-size:11px;font-weight:800;letter-spacing:.1em;padding:5px 9px;border-radius:6px;z-index:2;color:#fff}
+  .tag.before{left:10px;background:rgba(20,12,8,.72)}
+  .tag.after{right:10px;background:var(--accent)}
+  .caption{font-size:12.5px;color:var(--mut);margin-top:10px}
+  /* estimator */
+  label.fl{display:block;font-size:13px;font-weight:700;color:var(--brown);margin:14px 0 6px}
+  select,input[type=text],input[type=tel],textarea{width:100%;font-size:16px;padding:12px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);appearance:none}
+  select{background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%234a2e20' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+  .check{display:flex;gap:10px;align-items:flex-start;margin-top:12px;font-size:14.5px}
+  .check input{width:20px;height:20px;margin-top:1px;accent-color:var(--accent);flex:0 0 auto}
+  .check small{display:block;color:var(--mut);font-size:12.5px}
+  .rangebox{margin-top:18px;background:#fdf3e7;border:1.5px solid var(--tan);border-radius:12px;padding:16px;text-align:center}
+  .rangebox .lbl{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--brown2)}
+  .rangebox .val{font-size:31px;font-weight:800;color:var(--brown);margin-top:4px;letter-spacing:-.01em}
+  .rangebox .note{font-size:12.5px;color:var(--mut);margin-top:6px}
+  .ctaRow{display:flex;gap:10px;margin-top:14px}
+  .ctaRow a,.ctaRow button{flex:1;text-align:center;font-size:15px;font-weight:700;padding:13px 10px;border-radius:10px;border:none;cursor:pointer;text-decoration:none}
+  .ctaCall{background:var(--accent);color:#fff}
+  .ctaBook{background:var(--brown);color:#fff}
+  /* form */
+  .okbox{display:none;margin-top:14px;background:#eaf6ee;border:1.5px solid #9fd3ae;color:#14532a;border-radius:12px;padding:14px;font-size:14.5px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:8px 13px;font-size:13.5px;font-weight:600;color:var(--brown)}
+  .chip.soon{color:var(--mut);border-style:dashed}
+  footer{border-top:1px solid var(--line);padding:20px 18px 30px;text-align:center;color:var(--mut);font-size:12.5px;background:var(--card)}
+  footer b{color:var(--brown)}
+</style>
+</head>
+<body>
+<div class="ribbon">DEMO — FOR OWNER REVIEW · NOT PUBLISHED</div>
+
+<header class="top">
+  <div class="brand">PERFECT CONSTRUCTION<small>BROWNSTONE RESTORATION · NYC</small></div>
+  <a class="callbtn" href="tel:+13473358089">Call (347) 335-8089</a>
+</header>
+
+<main>
+  <h1>See your brownstone restored — and what it would cost.</h1>
+  <p class="sub">Drag the slider to preview a restoration, then get a ballpark range for your project in under a minute. No obligation.</p>
+
+  <section class="card">
+    <div class="step"><div class="stepnum">1</div><h2>See the transformation</h2></div>
+    <div class="ba" id="ba">
+      <img src="__BEFORE64__" alt="Brownstone stoop before restoration">
+      <div class="afterWrap" id="afterWrap"><img src="__AFTER64__" alt="Brownstone stoop after AI-visualized restoration"></div>
+      <span class="tag before">BEFORE</span><span class="tag after">AFTER · AI PREVIEW</span>
+      <div class="divider" id="divider"></div><div class="knob" id="knob">&#8249;&#8250;</div>
+    </div>
+    <p class="caption">Sample property. The “after” is an AI visualization for inspiration — not a construction drawing. In the live version, a homeowner uploads a photo of <b>their own</b> stoop or façade and sees it restored the same way.</p>
+  </section>
+
+  <section class="card">
+    <div class="step"><div class="stepnum">2</div><h2>Get your ballpark range</h2></div>
+
+    <label class="fl" for="pack">Project type</label>
+    <select id="pack">
+      <option value="stoop">Stoop restoration</option>
+      <option value="facade">Façade restoration</option>
+      <option value="pointing">Brick pointing</option>
+    </select>
+
+    <label class="fl" for="scope">Scope</label>
+    <select id="scope"></select>
+
+    <label class="check"><input type="checkbox" id="lpc"><span>Landmark / LPC historic district<small>Historic-district filing and materials typically add 15–30%.</small></span></label>
+    <label class="check" id="fedRow" style="display:none"><input type="checkbox" id="fed"><span>Federal-era historic brick<small>Lime mortar and slower historic work typically add 10–20%.</small></span></label>
+
+    <div class="rangebox">
+      <div class="lbl">YOUR BALLPARK RANGE</div>
+      <div class="val" id="rangeVal">$8,000 – $15,000</div>
+      <div class="note">A planning range based on recent NYC brownstone projects — <b>not a quote</b>. Your firm price comes after a free on-site visit, once we can see the actual condition.</div>
+    </div>
+
+    <div class="ctaRow">
+      <a class="ctaCall" href="tel:+13473358089">Call (347) 335-8089</a>
+      <button class="ctaBook" id="bookBtn" type="button">Book my free site visit</button>
+    </div>
+  </section>
+
+  <section class="card" id="leadCard">
+    <div class="step"><div class="stepnum">3</div><h2>Book the free site visit</h2></div>
+    <label class="fl" for="nm">Name</label>
+    <input type="text" id="nm" autocomplete="name" placeholder="Your name">
+    <label class="fl" for="ph">Phone</label>
+    <input type="tel" id="ph" autocomplete="tel" placeholder="(   )   -    ">
+    <label class="fl" for="ad">Property address</label>
+    <input type="text" id="ad" autocomplete="street-address" placeholder="Street, Borough">
+    <label class="fl" for="nt">Anything we should know? (optional)</label>
+    <textarea id="nt" rows="2" placeholder="e.g. Steps are crumbling on the left side…"></textarea>
+    <div class="ctaRow"><button class="ctaBook" id="sendBtn" type="button" style="flex:1">Request my visit</button></div>
+    <div class="okbox" id="okBox"><b>Request received.</b> In the live version this lands in Perfect Construction’s CRM with the homeowner’s photo and ballpark attached, and the office calls back to schedule. <i>Demo only — nothing was sent.</i></div>
+  </section>
+
+  <section class="card">
+    <div class="step"><div class="stepnum">+</div><h2>More project types</h2></div>
+    <p class="sub" style="margin-top:0">The same see-it-and-price-it flow extends to other projects. Estimator packs in build:</p>
+    <div class="chips">
+      <span class="chip">Kitchen remodel</span>
+      <span class="chip">Bathroom remodel</span>
+      <span class="chip">Porch &amp; deck</span>
+      <span class="chip">Pool</span>
+      <span class="chip soon">Each needs owner-approved price ranges before it can show a number</span>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <b>Perfect Construction USA Corp</b> · NYC Licence #2098164-DCA<br>
+  Brownstone façade &amp; stoop restoration · (347) 335-8089<br>
+  Ballpark ranges are for planning only and are not quotes or offers.
+</footer>
+
+<script>
+  /* ---------- before/after slider ---------- */
+  var ba=document.getElementById('ba'), wrap=document.getElementById('afterWrap'),
+      div=document.getElementById('divider'), knob=document.getElementById('knob');
+  function setPos(pct){ pct=Math.max(2,Math.min(98,pct));
+    wrap.style.clipPath='inset(0 0 0 '+pct+'%)';
+    div.style.left=pct+'%'; knob.style.left=pct+'%'; }
+  function fromEvent(e){ var r=ba.getBoundingClientRect();
+    var x=(e.touches? e.touches[0].clientX : e.clientX); setPos((x-r.left)/r.width*100); }
+  var dragging=false;
+  ba.addEventListener('pointerdown',function(e){dragging=true;ba.setPointerCapture(e.pointerId);fromEvent(e);});
+  ba.addEventListener('pointermove',function(e){ if(dragging) fromEvent(e); });
+  ba.addEventListener('pointerup',function(){dragging=false;});
+  ba.addEventListener('pointercancel',function(){dragging=false;});
+  setPos(50);
+
+  /* ---------- estimator: ranges from Perfect Construction's owner price book (Oct 2026) ---------- */
+  var BOOK={
+    stoop:{label:'Stoop restoration', scopes:[
+      {t:'3–4 steps — resurfacing & basic railings', lo:8000, hi:15000},
+      {t:'5–7 steps — full restoration, cheek walls & railing restoration', lo:15000, hi:35000}]},
+    facade:{label:'Façade restoration', scopes:[
+      {t:'Partial façade + stoop', lo:30000, hi:80000},
+      {t:'3-story façade (no stoop)', lo:60000, hi:120000},
+      {t:'Full front façade — all stories, cornice & lintels', lo:80000, hi:200000}]},
+    pointing:{label:'Brick pointing', scopes:[
+      {t:'Spot repair — small area, ground level', lo:1200, hi:4000},
+      {t:'One full wall / elevation', lo:8000, hi:25000},
+      {t:'Full row house — all elevations', lo:25000, hi:100000}]}
+  };
+  var packEl=document.getElementById('pack'), scopeEl=document.getElementById('scope'),
+      lpcEl=document.getElementById('lpc'), fedEl=document.getElementById('fed'),
+      fedRow=document.getElementById('fedRow'), valEl=document.getElementById('rangeVal');
+  function fmt(n){ return '$'+Math.round(n).toLocaleString('en-US'); }
+  function fillScopes(){ scopeEl.innerHTML='';
+    BOOK[packEl.value].scopes.forEach(function(s,i){ var o=document.createElement('option');
+      o.value=i; o.textContent=s.t; scopeEl.appendChild(o); });
+    fedRow.style.display = packEl.value==='pointing' ? 'flex' : 'none';
+    if(packEl.value!=='pointing') fedEl.checked=false;
+    calc(); }
+  function calc(){ var s=BOOK[packEl.value].scopes[+scopeEl.value];
+    var lo=s.lo, hi=s.hi;
+    if(lpcEl.checked){ lo*=1.15; hi*=1.30; }
+    if(fedEl.checked){ lo*=1.10; hi*=1.20; }
+    valEl.textContent=fmt(lo)+' – '+fmt(hi); }
+  packEl.addEventListener('change',fillScopes);
+  scopeEl.addEventListener('change',calc);
+  lpcEl.addEventListener('change',calc);
+  fedEl.addEventListener('change',calc);
+  fillScopes();
+
+  /* ---------- demo lead form ---------- */
+  document.getElementById('bookBtn').addEventListener('click',function(){
+    document.getElementById('leadCard').scrollIntoView({behavior:'smooth'}); });
+  document.getElementById('sendBtn').addEventListener('click',function(){
+    var nm=document.getElementById('nm').value.trim(), ph=document.getElementById('ph').value.trim();
+    if(!nm||!ph){ alert('Please add your name and phone so the office can call you back.'); return; }
+    document.getElementById('okBox').style.display='block';
+    document.getElementById('okBox').scrollIntoView({behavior:'smooth',block:'center'}); });
+</script>
+</body>
+</html>

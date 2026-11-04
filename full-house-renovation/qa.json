@@ -1,0 +1,12 @@
+{
+ "slug": "full-house-renovation",
+ "consult": [
+  "optStruct",
+  "walls"
+ ],
+ "size": {
+  "id": "inSqft",
+  "value": "2600",
+  "kind": "input"
+ }
+}

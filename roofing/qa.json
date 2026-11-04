@@ -1,0 +1,12 @@
+{
+ "slug": "roofing",
+ "consult": [
+  "optStruct",
+  "change"
+ ],
+ "size": {
+  "id": "inSqft",
+  "value": "3200",
+  "kind": "input"
+ }
+}

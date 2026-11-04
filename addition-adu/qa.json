@@ -1,0 +1,12 @@
+{
+ "slug": "addition-adu",
+ "consult": [
+  "optBathKI",
+  "bath"
+ ],
+ "size": {
+  "id": "inSqft",
+  "value": "700",
+  "kind": "input"
+ }
+}

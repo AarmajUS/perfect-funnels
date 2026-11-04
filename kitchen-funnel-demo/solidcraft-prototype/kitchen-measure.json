@@ -1,0 +1,1156 @@
+{
+  "bodies": [
+    {
+      "area_mm2": 22978018.559999995,
+      "bbox": {
+        "max": [
+          3657.6,
+          3048.0,
+          0.0
+        ],
+        "min": [
+          0.0,
+          0.0,
+          -50.8
+        ]
+      },
+      "center_of_mass": [
+        1828.8,
+        1524.0,
+        -25.400000000000006
+      ],
+      "closed": true,
+      "density_g_cm3": 1.29,
+      "edges": 12,
+      "face_types": {
+        "plane": 6
+      },
+      "faces": 6,
+      "kernel": {
+        "edges": 12,
+        "faces": 6,
+        "shells": 1,
+        "vertices": 8
+      },
+      "mass_g": 730574.6420736001,
+      "material": "Default",
+      "name": "Floor",
+      "vertices": 8,
+      "volume_mm3": 566336931.84
+    },
+    {
+      "area_mm2": 19695444.479999997,
+      "bbox": {
+        "max": [
+          3657.6,
+          0.0,
+          2438.4
+        ],
+        "min": [
+          0.0,
+          -152.4,
+          0.0
+        ]
+      },
+      "center_of_mass": [
+        1828.8,
+        -76.2,
+        1219.2
+      ],
+      "closed": true,
+      "density_g_cm3": 1.29,
+      "edges": 12,
+      "face_types": {
+        "plane": 6
+      },
+      "faces": 6,
+      "kernel": {
+        "edges": 12,
+        "faces": 6,
+        "shells": 1,
+        "vertices": 8
+      },
+      "mass_g": 1753379.1409766402,
+      "material": "Default",
+      "name": "Wall_South",
+      "vertices": 8,
+      "volume_mm3": 1359208636.4160001
+    },
+    {
+      "area_mm2": 16536741.120000001,
+      "bbox": {
+        "max": [
+          0.0,
+          3048.0,
+          2438.4
+        ],
+        "min": [
+          -152.4,
+          0.0,
+          0.0
+        ]
+      },
+      "center_of_mass": [
+        -76.2,
+        1524.0,
+        1219.2
+      ],
+      "closed": true,
+      "density_g_cm3": 1.29,
+      "edges": 12,
+      "face_types": {
+        "plane": 6
+      },
+      "faces": 6,
+      "kernel": {
+        "edges": 12,
+        "faces": 6,
+        "shells": 1,
+        "vertices": 8
+      },
+      "mass_g": 1461149.2841472002,
+      "material": "Default",
+      "name": "Wall_West",
+      "vertices": 8,
+      "volume_mm3": 1132673863.68
+    },
+    {
+      "area_mm2": 5144505.839999998,
+      "bbox": {
+        "max": [
+          1371.6,
+          609.5999999999999,
+          876.3
+        ],
+        "min": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "center_of_mass": [
+        685.8,
+        304.79999999999995,
+        438.15
+      ],
+      "closed": true,
+      "density_g_cm3": 1.29,
+      "edges": 12,
+      "face_types": {
+        "plane": 6
+      },
+      "faces": 6,
+      "kernel": {
+        "edges": 12,
+        "faces": 6,
+        "shells": 1,
+        "vertices": 8
+      },
+      "mass_g": 945180.9431827199,
+      "material": "Default",
+      "name": "Base_South_West",
+      "vertices": 8,
+      "volume_mm3": 732698405.5679998
+    },
+    {
+      "area_mm2": 3785798.88,
+      "bbox": {
+        "max": [
+          2286.0,
+          609.5999999999999,
+          876.3
+        ],
+        "min": [
+          1371.6,
+          0.0,
+          0.0
+        ]
+      },
+      "center_of_mass": [
+        1828.8,
+        304.79999999999995,
+        438.15000000000003
+      ],
+      "closed": true,
+      "density_g_cm3": 1.29,
+      "edges": 12,
+      "face_types": {
+        "plane": 6
+      },
+      "faces": 6,
+      "kernel": {
+        "edges": 12,
+        "faces": 6,
+        "shells": 1,
+        "vertices": 8
+      },
+      "mass_g": 630120.62878848,
+      "material": "Default",
+      "name": "Base_Sink",
+      "vertices": 8,
+      "volume_mm3": 488465603.7119999
+    },
+    {
+      "area_mm2": 2879994.2399999993,
+      "bbox": {
+        "max": [
+          3657.6,
+          609.5999999999999,
+          876.3
+        ],
+        "min": [
+          3048.0,
+          0.0,
+          0.0
+        ]
+      },
+      "center_of_mass": [
+        3352.8,
+        304.79999999999995,
+        438.15
+      ],
+      "closed": true,
+      "density_g_cm3": 1.29,
+      "edges": 12,
+      "face_types": {
+        "plane": 6
+      },
+      "faces": 6,
+      "kernel": {
+        "edges": 12,
+        "faces": 6,
+        "shells": 1,
+        "vertices": 8
+      },
+      "mass_g": 420080.41919231985,
+      "material": "Default",
+      "name": "Base_South_East",
+      "vertices": 8,
+      "volume_mm3": 325643735.8079999
+    },
+    {
+      "area_mm2": 5597408.16,
+      "bbox": {
+        "max": [
+          609.5999999999999,
+          2133.6,
+          876.3
+        ],
+        "min": [
+          0.0,
+          609.5999999999999,
+          0.0
+        ]
+      },
+      "center_of_mass": [
+        304.79999999999995,
+        1371.6,
+        438.15
+      ],
+      "closed": true,
+      "density_g_cm3": 1.29,
+      "edges": 12,
+      "face_types": {
+        "plane": 6
+      },
+      "faces": 6,
+      "kernel": {
+        "edges": 12,
+        "faces": 6,
+        "shells": 1,
+        "vertices": 8
+      },
+      "mass_g": 1050201.0479807996,
+      "material": "Default",
+      "name": "Base_Return",
+      "vertices": 8,
+      "volume_mm3": 814109339.5199996
+    },
+    {
+      "area_mm2": 869030.5199999999,
+      "bbox": {
+        "max": [
+          635.0,
+          609.5999999999999,
+          914.4
+        ],
+        "min": [
+          0.0,
+          0.0,
+          876.3
+        ]
+      },
+      "center_of_mass": [
+        317.5,
+        304.79999999999995,
+        895.3499999999999
+      ],
+      "closed": true,
+      "density_g_cm3": 1.29,
+      "edges": 12,
+      "face_types": {
+        "plane": 6
+      },
+      "faces": 6,
+      "kernel": {
+        "edges": 12,
+        "faces": 6,
+        "shells": 1,
+        "vertices": 8
+      },
+      "mass_g": 19025.38130400001,
+      "material": "Default",
+      "name": "Counter_Corner",
+      "vertices": 8,
+      "volume_mm3": 14748357.600000007
+    },
+    {
+      "area_mm2": 1740641.6800000002,
+      "bbox": {
+        "max": [
+          2286.0,
+          635.0,
+          914.4
+        ],
+        "min": [
+          635.0,
+          0.0,
+          876.3
+        ]
+      },
+      "center_of_mass": [
+        1306.1034934497816,
+        322.8240174672489,
+        895.35
+      ],
+      "closed": true,
+      "density_g_cm3": 1.29,
+      "edges": 24,
+      "face_types": {
+        "plane": 10
+      },
+      "faces": 10,
+      "kernel": {
+        "edges": 24,
+        "faces": 10,
+        "shells": 1,
+        "vertices": 16
+      },
+      "mass_g": 36306.76932180002,
+      "material": "Default",
+      "name": "Counter_South",
+      "vertices": 16,
+      "volume_mm3": 28144782.420000017
+    },
+    {
+      "area_mm2": 869030.5199999999,
+      "bbox": {
+        "max": [
+          3657.6,
+          635.0,
+          914.4
+        ],
+        "min": [
+          3048.0,
+          0.0,
+          876.2999999999998
+        ]
+      },
+      "center_of_mass": [
+        3352.8,
+        317.5,
+        895.3499999999998
+      ],
+      "closed": true,
+      "density_g_cm3": 1.29,
+      "edges": 12,
+      "face_types": {
+        "plane": 6
+      },
+      "faces": 6,
+      "kernel": {
+        "edges": 12,
+        "faces": 6,
+        "shells": 1,
+        "vertices": 8
+      },
+      "mass_g": 19025.381304000006,
+      "material": "Default",
+      "name": "Counter_South_East",
+      "vertices": 8,
+      "volume_mm3": 14748357.600000003
+    },
+    {
+      "area_mm2": 2099995.8000000003,
+      "bbox": {
+        "max": [
+          635.0,
+          2133.6,
+          914.4
+        ],
+        "min": [
+          0.0,
+          609.5999999999999,
+          876.3
+        ]
+      },
+      "center_of_mass": [
+        317.5,
+        1371.6,
+        895.3499999999999
+      ],
+      "closed": true,
+      "density_g_cm3": 1.29,
+      "edges": 12,
+      "face_types": {
+        "plane": 6
+      },
+      "faces": 6,
+      "kernel": {
+        "edges": 12,
+        "faces": 6,
+        "shells": 1,
+        "vertices": 8
+      },
+      "mass_g": 47563.453260000046,
+      "material": "Default",
+      "name": "Counter_Return",
+      "vertices": 8,
+      "volume_mm3": 36870894.00000003
+    },
+    {
+      "area_mm2": 1153546.0800000005,
+      "bbox": {
+        "max": [
+          2209.8,
+          508.0,
+          914.4
+        ],
+        "min": [
+          1447.7999999999997,
+          101.6,
+          685.8
+        ]
+      },
+      "center_of_mass": [
+        1828.8,
+        304.8,
+        800.0999999999999
+      ],
+      "closed": true,
+      "density_g_cm3": 1.29,
+      "edges": 12,
+      "face_types": {
+        "plane": 6
+      },
+      "faces": 6,
+      "kernel": {
+        "edges": 12,
+        "faces": 6,
+        "shells": 1,
+        "vertices": 8
+      },
+      "mass_g": 91321.83025920005,
+      "material": "Default",
+      "name": "Sink_Basin",
+      "vertices": 8,
+      "volume_mm3": 70792116.48000003
+    },
+    {
+      "area_mm2": 3522573.5999999996,
+      "bbox": {
+        "max": [
+          3048.0,
+          635.0,
+          914.4
+        ],
+        "min": [
+          2286.0,
+          0.0,
+          0.0
+        ]
+      },
+      "center_of_mass": [
+        2667.0,
+        317.5,
+        457.19999999999993
+      ],
+      "closed": true,
+      "density_g_cm3": 1.29,
+      "edges": 12,
+      "face_types": {
+        "plane": 6
+      },
+      "faces": 6,
+      "kernel": {
+        "edges": 12,
+        "faces": 6,
+        "shells": 1,
+        "vertices": 8
+      },
+      "mass_g": 570761.43912,
+      "material": "Default",
+      "name": "Range",
+      "vertices": 8,
+      "volume_mm3": 442450728.0
+    },
+    {
+      "area_mm2": 42561.08848340335,
+      "bbox": {
+        "max": [
+          2539.9988231834495,
+          253.99820034837094,
+          927.1000000000005
+        ],
+        "min": [
+          2387.60117681655,
+          101.60179965162891,
+          914.3999999999992
+        ]
+      },
+      "center_of_mass": [
+        2463.7999999999997,
+        177.79999999999998,
+        920.7499999999999
+      ],
+      "closed": true,
+      "density_g_cm3": 1.29,
+      "edges": 2,
+      "face_types": {
+        "cylinder": 1,
+        "plane": 2
+      },
+      "faces": 3,
+      "kernel": {
+        "edges": 6,
+        "faces": 4,
+        "shells": 1,
+        "vertices": 4
+      },
+      "mass_g": 298.83159118994104,
+      "material": "Default",
+      "name": "Burner1",
+      "vertices": 2,
+      "volume_mm3": 231652.3962712721
+    },
+    {
+      "area_mm2": 25080.686551393017,
+      "bbox": {
+        "max": [
+          2520.9491173875867,
+          514.3486502612781,
+          927.1000000000006
+        ],
+        "min": [
+          2406.6508826124127,
+          400.0513497387219,
+          914.3999999999994
+        ]
+      },
+      "center_of_mass": [
+        2463.7999999999997,
+        457.20000000000005,
+        920.75
+      ],
+      "closed": true,
+      "density_g_cm3": 1.29,
+      "edges": 2,
+      "face_types": {
+        "cylinder": 1,
+        "plane": 2
+      },
+      "faces": 3,
+      "kernel": {
+        "edges": 6,
+        "faces": 4,
+        "shells": 1,
+        "vertices": 4
+      },
+      "mass_g": 168.09277004436206,
+      "material": "Default",
+      "name": "Burner2",
+      "vertices": 2,
+      "volume_mm3": 130304.47290260624
+    },
+    {
+      "area_mm2": 25080.686551392973,
+      "bbox": {
+        "max": [
+          2927.349117387587,
+          234.94865026127803,
+          927.1000000000006
+        ],
+        "min": [
+          2813.050882612413,
+          120.6513497387219,
+          914.3999999999992
+        ]
+      },
+      "center_of_mass": [
+        2870.2,
+        177.79999999999998,
+        920.75
+      ],
+      "closed": true,
+      "density_g_cm3": 1.29,
+      "edges": 2,
+      "face_types": {
+        "cylinder": 1,
+        "plane": 2
+      },
+      "faces": 3,
+      "kernel": {
+        "edges": 6,
+        "faces": 4,
+        "shells": 1,
+        "vertices": 4
+      },
+      "mass_g": 168.09277004436197,
+      "material": "Default",
+      "name": "Burner3",
+      "vertices": 2,
+      "volume_mm3": 130304.47290260618
+    },
+    {
+      "area_mm2": 42561.08848340332,
+      "bbox": {
+        "max": [
+          2946.3988231834496,
+          533.3982003483711,
+          927.1000000000005
+        ],
+        "min": [
+          2794.00117681655,
+          381.00179965162897,
+          914.3999999999995
+        ]
+      },
+      "center_of_mass": [
+        2870.2,
+        457.2000000000001,
+        920.7500000000001
+      ],
+      "closed": true,
+      "density_g_cm3": 1.29,
+      "edges": 2,
+      "face_types": {
+        "cylinder": 1,
+        "plane": 2
+      },
+      "faces": 3,
+      "kernel": {
+        "edges": 6,
+        "faces": 4,
+        "shells": 1,
+        "vertices": 4
+      },
+      "mass_g": 298.831591189941,
+      "material": "Default",
+      "name": "Burner4",
+      "vertices": 2,
+      "volume_mm3": 231652.39627127207
+    },
+    {
+      "area_mm2": 7354824.0,
+      "bbox": {
+        "max": [
+          762.0,
+          3048.0,
+          1778.0
+        ],
+        "min": [
+          0.0,
+          2133.6,
+          0.0
+        ]
+      },
+      "center_of_mass": [
+        381.0,
+        2590.8,
+        889.0
+      ],
+      "closed": true,
+      "density_g_cm3": 1.29,
+      "edges": 12,
+      "face_types": {
+        "plane": 6
+      },
+      "faces": 6,
+      "kernel": {
+        "edges": 12,
+        "faces": 6,
+        "shells": 1,
+        "vertices": 8
+      },
+      "mass_g": 1598132.0295359998,
+      "material": "Default",
+      "name": "Fridge",
+      "vertices": 8,
+      "volume_mm3": 1238862038.3999999
+    },
+    {
+      "area_mm2": 3390960.96,
+      "bbox": {
+        "max": [
+          1371.6,
+          304.79999999999995,
+          2133.6
+        ],
+        "min": [
+          0.0,
+          0.0,
+          1371.6
+        ]
+      },
+      "center_of_mass": [
+        685.8,
+        152.39999999999998,
+        1752.6
+      ],
+      "closed": true,
+      "density_g_cm3": 1.29,
+      "edges": 12,
+      "face_types": {
+        "plane": 6
+      },
+      "faces": 6,
+      "kernel": {
+        "edges": 12,
+        "faces": 6,
+        "shells": 1,
+        "vertices": 8
+      },
+      "mass_g": 410948.2361663999,
+      "material": "Default",
+      "name": "WallCab_South_West",
+      "vertices": 8,
+      "volume_mm3": 318564524.1599999
+    },
+    {
+      "area_mm2": 1765157.7599999998,
+      "bbox": {
+        "max": [
+          3657.6,
+          304.79999999999995,
+          2133.6
+        ],
+        "min": [
+          3048.0,
+          0.0,
+          1371.6
+        ]
+      },
+      "center_of_mass": [
+        3352.8000000000006,
+        152.39999999999998,
+        1752.6
+      ],
+      "closed": true,
+      "density_g_cm3": 1.29,
+      "edges": 12,
+      "face_types": {
+        "plane": 6
+      },
+      "faces": 6,
+      "kernel": {
+        "edges": 12,
+        "faces": 6,
+        "shells": 1,
+        "vertices": 8
+      },
+      "mass_g": 182643.66051839993,
+      "material": "Default",
+      "name": "WallCab_South_East",
+      "vertices": 8,
+      "volume_mm3": 141584232.95999995
+    },
+    {
+      "area_mm2": 3716121.5999999996,
+      "bbox": {
+        "max": [
+          304.79999999999995,
+          2133.6,
+          2133.6
+        ],
+        "min": [
+          0.0,
+          609.5999999999999,
+          1371.6
+        ]
+      },
+      "center_of_mass": [
+        152.39999999999998,
+        1371.6,
+        1752.6
+      ],
+      "closed": true,
+      "density_g_cm3": 1.29,
+      "edges": 12,
+      "face_types": {
+        "plane": 6
+      },
+      "faces": 6,
+      "kernel": {
+        "edges": 12,
+        "faces": 6,
+        "shells": 1,
+        "vertices": 8
+      },
+      "mass_g": 456609.15129600005,
+      "material": "Default",
+      "name": "WallCab_Return",
+      "vertices": 8,
+      "volume_mm3": 353960582.40000004
+    }
+  ],
+  "body_count": 21,
+  "params": [
+    {
+      "comment": "",
+      "error": null,
+      "expression": "3657.6 mm",
+      "model": false,
+      "name": "room_x",
+      "unit": "mm",
+      "value": 3657.6
+    },
+    {
+      "comment": "",
+      "error": null,
+      "expression": "3048 mm",
+      "model": false,
+      "name": "room_y",
+      "unit": "mm",
+      "value": 3048.0
+    },
+    {
+      "comment": "",
+      "error": null,
+      "expression": "2438.4 mm",
+      "model": false,
+      "name": "ceiling_h",
+      "unit": "mm",
+      "value": 2438.4
+    }
+  ],
+  "sketches": [],
+  "timeline": [
+    {
+      "boolean_diagnostics": {
+        "events": [],
+        "truncated": false
+      },
+      "error": null,
+      "id": 1,
+      "ms": 1.554543,
+      "name": "Floor",
+      "rolled_back": false,
+      "suppressed": false,
+      "type": "BoxFeature",
+      "warning": null
+    },
+    {
+      "boolean_diagnostics": {
+        "events": [],
+        "truncated": false
+      },
+      "error": null,
+      "id": 2,
+      "ms": 0.390747,
+      "name": "Wall_South",
+      "rolled_back": false,
+      "suppressed": false,
+      "type": "BoxFeature",
+      "warning": null
+    },
+    {
+      "boolean_diagnostics": {
+        "events": [],
+        "truncated": false
+      },
+      "error": null,
+      "id": 3,
+      "ms": 0.357736,
+      "name": "Wall_West",
+      "rolled_back": false,
+      "suppressed": false,
+      "type": "BoxFeature",
+      "warning": null
+    },
+    {
+      "boolean_diagnostics": {
+        "events": [],
+        "truncated": false
+      },
+      "error": null,
+      "id": 4,
+      "ms": 0.23984,
+      "name": "Base_South_West",
+      "rolled_back": false,
+      "suppressed": false,
+      "type": "BoxFeature",
+      "warning": null
+    },
+    {
+      "boolean_diagnostics": {
+        "events": [],
+        "truncated": false
+      },
+      "error": null,
+      "id": 5,
+      "ms": 0.22212400000000002,
+      "name": "Base_Sink",
+      "rolled_back": false,
+      "suppressed": false,
+      "type": "BoxFeature",
+      "warning": null
+    },
+    {
+      "boolean_diagnostics": {
+        "events": [],
+        "truncated": false
+      },
+      "error": null,
+      "id": 6,
+      "ms": 0.208183,
+      "name": "Base_South_East",
+      "rolled_back": false,
+      "suppressed": false,
+      "type": "BoxFeature",
+      "warning": null
+    },
+    {
+      "boolean_diagnostics": {
+        "events": [],
+        "truncated": false
+      },
+      "error": null,
+      "id": 7,
+      "ms": 0.271006,
+      "name": "Base_Return",
+      "rolled_back": false,
+      "suppressed": false,
+      "type": "BoxFeature",
+      "warning": null
+    },
+    {
+      "boolean_diagnostics": {
+        "events": [],
+        "truncated": false
+      },
+      "error": null,
+      "id": 8,
+      "ms": 0.26022,
+      "name": "Counter_Corner",
+      "rolled_back": false,
+      "suppressed": false,
+      "type": "BoxFeature",
+      "warning": null
+    },
+    {
+      "boolean_diagnostics": {
+        "events": [],
+        "truncated": false
+      },
+      "error": null,
+      "id": 9,
+      "ms": 0.323255,
+      "name": "Counter_South",
+      "rolled_back": false,
+      "suppressed": false,
+      "type": "BoxFeature",
+      "warning": null
+    },
+    {
+      "boolean_diagnostics": {
+        "events": [],
+        "truncated": false
+      },
+      "error": null,
+      "id": 10,
+      "ms": 0.312349,
+      "name": "Counter_South_East",
+      "rolled_back": false,
+      "suppressed": false,
+      "type": "BoxFeature",
+      "warning": null
+    },
+    {
+      "boolean_diagnostics": {
+        "events": [],
+        "truncated": false
+      },
+      "error": null,
+      "id": 11,
+      "ms": 0.221402,
+      "name": "Counter_Return",
+      "rolled_back": false,
+      "suppressed": false,
+      "type": "BoxFeature",
+      "warning": null
+    },
+    {
+      "boolean_diagnostics": {
+        "events": [],
+        "truncated": false
+      },
+      "error": null,
+      "id": 12,
+      "ms": 2.514965,
+      "name": "SinkCut",
+      "rolled_back": false,
+      "suppressed": false,
+      "type": "BoxFeature",
+      "warning": null
+    },
+    {
+      "boolean_diagnostics": {
+        "events": [],
+        "truncated": false
+      },
+      "error": null,
+      "id": 13,
+      "ms": 0.280551,
+      "name": "Sink_Basin",
+      "rolled_back": false,
+      "suppressed": false,
+      "type": "BoxFeature",
+      "warning": null
+    },
+    {
+      "boolean_diagnostics": {
+        "events": [],
+        "truncated": false
+      },
+      "error": null,
+      "id": 14,
+      "ms": 0.217687,
+      "name": "Range",
+      "rolled_back": false,
+      "suppressed": false,
+      "type": "BoxFeature",
+      "warning": null
+    },
+    {
+      "boolean_diagnostics": {
+        "events": [],
+        "truncated": false
+      },
+      "error": null,
+      "id": 15,
+      "ms": 1.908674,
+      "name": "Burner1",
+      "rolled_back": false,
+      "suppressed": false,
+      "type": "CylinderFeature",
+      "warning": null
+    },
+    {
+      "boolean_diagnostics": {
+        "events": [],
+        "truncated": false
+      },
+      "error": null,
+      "id": 16,
+      "ms": 1.513341,
+      "name": "Burner2",
+      "rolled_back": false,
+      "suppressed": false,
+      "type": "CylinderFeature",
+      "warning": null
+    },
+    {
+      "boolean_diagnostics": {
+        "events": [],
+        "truncated": false
+      },
+      "error": null,
+      "id": 17,
+      "ms": 1.415385,
+      "name": "Burner3",
+      "rolled_back": false,
+      "suppressed": false,
+      "type": "CylinderFeature",
+      "warning": null
+    },
+    {
+      "boolean_diagnostics": {
+        "events": [],
+        "truncated": false
+      },
+      "error": null,
+      "id": 18,
+      "ms": 1.778609,
+      "name": "Burner4",
+      "rolled_back": false,
+      "suppressed": false,
+      "type": "CylinderFeature",
+      "warning": null
+    },
+    {
+      "boolean_diagnostics": {
+        "events": [],
+        "truncated": false
+      },
+      "error": null,
+      "id": 19,
+      "ms": 0.329675,
+      "name": "Fridge",
+      "rolled_back": false,
+      "suppressed": false,
+      "type": "BoxFeature",
+      "warning": null
+    },
+    {
+      "boolean_diagnostics": {
+        "events": [],
+        "truncated": false
+      },
+      "error": null,
+      "id": 20,
+      "ms": 0.5632360000000001,
+      "name": "WallCab_South_West",
+      "rolled_back": false,
+      "suppressed": false,
+      "type": "BoxFeature",
+      "warning": null
+    },
+    {
+      "boolean_diagnostics": {
+        "events": [],
+        "truncated": false
+      },
+      "error": null,
+      "id": 21,
+      "ms": 0.28701,
+      "name": "WallCab_South_East",
+      "rolled_back": false,
+      "suppressed": false,
+      "type": "BoxFeature",
+      "warning": null
+    },
+    {
+      "boolean_diagnostics": {
+        "events": [],
+        "truncated": false
+      },
+      "error": null,
+      "id": 22,
+      "ms": 0.30290500000000004,
+      "name": "WallCab_Return",
+      "rolled_back": false,
+      "suppressed": false,
+      "type": "BoxFeature",
+      "warning": null
+    }
+  ],
+  "total": {
+    "area_mm2": 103235077.35006957,
+    "edges": 224,
+    "faces": 118,
+    "mass_g": 10423957.28715003,
+    "open_bodies_skipped": 0,
+    "vertices": 152,
+    "volume_mm3": 8080587044.302347
+  }
+}

@@ -1,0 +1,12 @@
+{
+ "slug": "foundation-waterproofing",
+ "consult": [
+  "optWater",
+  "active"
+ ],
+ "size": {
+  "id": "inLF",
+  "value": "80",
+  "kind": "input"
+ }
+}

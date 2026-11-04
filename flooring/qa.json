@@ -1,0 +1,12 @@
+{
+ "slug": "flooring",
+ "consult": [
+  "optStruct",
+  "open"
+ ],
+ "size": {
+  "id": "inSqft",
+  "value": "1600",
+  "kind": "input"
+ }
+}

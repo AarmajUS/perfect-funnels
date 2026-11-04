@@ -1,0 +1,12 @@
+{
+ "slug": "hvac-replacement",
+ "consult": [
+  "optDuct",
+  "new"
+ ],
+ "size": {
+  "id": "inSqft",
+  "value": "2600",
+  "kind": "input"
+ }
+}

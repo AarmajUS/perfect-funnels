@@ -1,0 +1,12 @@
+{
+ "slug": "basement-finishing",
+ "consult": [
+  "optBath",
+  "full"
+ ],
+ "size": {
+  "id": "inSqft",
+  "value": "1100",
+  "kind": "input"
+ }
+}

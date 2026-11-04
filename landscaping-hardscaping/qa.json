@@ -1,0 +1,12 @@
+{
+ "slug": "landscaping-hardscaping",
+ "consult": [
+  "optFeat",
+  "yes"
+ ],
+ "size": {
+  "id": "inSqft",
+  "value": "4000",
+  "kind": "input"
+ }
+}

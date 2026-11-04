@@ -1,0 +1,12 @@
+{
+ "slug": "windows-doors",
+ "consult": [
+  "optStruct",
+  "new"
+ ],
+ "size": {
+  "id": "inWinStd",
+  "value": "20",
+  "kind": "input"
+ }
+}

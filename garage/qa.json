@@ -1,0 +1,12 @@
+{
+ "slug": "garage",
+ "consult": [
+  "optStruct",
+  "convert"
+ ],
+ "size": {
+  "id": "optSize",
+  "value": "3",
+  "kind": "select"
+ }
+}

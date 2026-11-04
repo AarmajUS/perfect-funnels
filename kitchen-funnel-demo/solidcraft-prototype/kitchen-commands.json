@@ -1,0 +1,359 @@
+{
+ "commands": [
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "room_x",
+    "expression": "3657.6 mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "room_y",
+    "expression": "3048 mm"
+   }
+  },
+  {
+   "command": "parameters.add",
+   "params": {
+    "name": "ceiling_h",
+    "expression": "2438.4 mm"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     0,
+     0,
+     -50.8
+    ],
+    "length": "room_x",
+    "width": "room_y",
+    "height": 50.8,
+    "body_name": "Floor",
+    "name": "Floor"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     0,
+     -152.4,
+     0
+    ],
+    "length": "room_x",
+    "width": 152.4,
+    "height": "ceiling_h",
+    "body_name": "Wall_South",
+    "name": "Wall_South"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     -152.4,
+     0,
+     0
+    ],
+    "length": 152.4,
+    "width": "room_y",
+    "height": "ceiling_h",
+    "body_name": "Wall_West",
+    "name": "Wall_West"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     0,
+     0,
+     0
+    ],
+    "length": 1371.6,
+    "width": 609.5999999999999,
+    "height": 876.3,
+    "body_name": "Base_South_West",
+    "name": "Base_South_West"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     1371.6,
+     0,
+     0
+    ],
+    "length": 914.4,
+    "width": 609.5999999999999,
+    "height": 876.3,
+    "body_name": "Base_Sink",
+    "name": "Base_Sink"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     3048.0,
+     0,
+     0
+    ],
+    "length": 609.5999999999999,
+    "width": 609.5999999999999,
+    "height": 876.3,
+    "body_name": "Base_South_East",
+    "name": "Base_South_East"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     0,
+     609.5999999999999,
+     0
+    ],
+    "length": 609.5999999999999,
+    "width": 1524.0,
+    "height": 876.3,
+    "body_name": "Base_Return",
+    "name": "Base_Return"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     0,
+     0,
+     876.3
+    ],
+    "length": 635.0,
+    "width": 609.5999999999999,
+    "height": 38.099999999999994,
+    "body_name": "Counter_Corner",
+    "name": "Counter_Corner"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     635.0,
+     0,
+     876.3
+    ],
+    "length": 1651.0,
+    "width": 635.0,
+    "height": 38.099999999999994,
+    "body_name": "Counter_South",
+    "name": "Counter_South"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     3048.0,
+     0,
+     876.3
+    ],
+    "length": 609.5999999999999,
+    "width": 635.0,
+    "height": 38.099999999999994,
+    "body_name": "Counter_South_East",
+    "name": "Counter_South_East"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     0,
+     609.5999999999999,
+     876.3
+    ],
+    "length": 635.0,
+    "width": 1524.0,
+    "height": 38.099999999999994,
+    "body_name": "Counter_Return",
+    "name": "Counter_Return"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     1447.8,
+     101.6,
+     850
+    ],
+    "length": 762.0,
+    "width": 406.4,
+    "height": 200,
+    "body_name": "SinkCut",
+    "name": "SinkCut",
+    "operation": "cut",
+    "targets": [
+     "Counter_South"
+    ]
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     1447.8,
+     101.6,
+     685.8
+    ],
+    "length": 762.0,
+    "width": 406.4,
+    "height": 228.6,
+    "body_name": "Sink_Basin",
+    "name": "Sink_Basin"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     2286.0,
+     0,
+     0
+    ],
+    "length": 762.0,
+    "width": 635.0,
+    "height": 914.4,
+    "body_name": "Range",
+    "name": "Range"
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     2463.7999999999997,
+     177.79999999999998,
+     914.4
+    ],
+    "diameter": 152.39999999999998,
+    "height": 12.7,
+    "operation": "new",
+    "body_name": "Burner1",
+    "name": "Burner1"
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     2463.7999999999997,
+     457.2,
+     914.4
+    ],
+    "diameter": 114.3,
+    "height": 12.7,
+    "operation": "new",
+    "body_name": "Burner2",
+    "name": "Burner2"
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     2870.2,
+     177.79999999999998,
+     914.4
+    ],
+    "diameter": 114.3,
+    "height": 12.7,
+    "operation": "new",
+    "body_name": "Burner3",
+    "name": "Burner3"
+   }
+  },
+  {
+   "command": "solid.cylinder",
+   "params": {
+    "base": [
+     2870.2,
+     457.2,
+     914.4
+    ],
+    "diameter": 152.39999999999998,
+    "height": 12.7,
+    "operation": "new",
+    "body_name": "Burner4",
+    "name": "Burner4"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     0,
+     2133.6,
+     0
+    ],
+    "length": 762.0,
+    "width": 914.4,
+    "height": 1778.0,
+    "body_name": "Fridge",
+    "name": "Fridge"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     0,
+     0,
+     1371.6
+    ],
+    "length": 1371.6,
+    "width": 304.79999999999995,
+    "height": 762.0,
+    "body_name": "WallCab_South_West",
+    "name": "WallCab_South_West"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     3048.0,
+     0,
+     1371.6
+    ],
+    "length": 609.5999999999999,
+    "width": 304.79999999999995,
+    "height": 762.0,
+    "body_name": "WallCab_South_East",
+    "name": "WallCab_South_East"
+   }
+  },
+  {
+   "command": "solid.box",
+   "params": {
+    "corner": [
+     0,
+     609.5999999999999,
+     1371.6
+    ],
+    "length": 304.79999999999995,
+    "width": 1524.0,
+    "height": 762.0,
+    "body_name": "WallCab_Return",
+    "name": "WallCab_Return"
+   }
+  }
+ ]
+}

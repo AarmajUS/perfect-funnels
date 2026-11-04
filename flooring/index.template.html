@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Flooring Funnel — Demo (Offshore Construction / White-Label)</title>
+<style>
+  :root{ --accent:#14405e; --accent2:#b07d3c; --ink:#1d2329; --mut:#6d7680; --paper:#f5f3ef; --card:#fff; --line:#e2ddd3; }
+  body.wl{ --accent:#0f766e; --accent2:#0f766e; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.45;-webkit-font-smoothing:antialiased}
+  .ribbon{background:#14100c;color:#f3e3cf;text-align:center;font-size:12px;letter-spacing:.13em;padding:7px 10px;font-weight:600}
+  .brandswitch{display:flex;gap:8px;justify-content:center;padding:10px;background:#ece8e0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .brandswitch span{font-size:12px;font-weight:700;color:var(--mut);align-self:center;letter-spacing:.06em}
+  .brandswitch button{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:7px 13px;font-size:13px;font-weight:700;cursor:pointer;color:var(--ink)}
+  .brandswitch button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+  header.top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 18px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+  .brand{font-weight:800;font-size:17px;color:var(--accent);letter-spacing:.01em}
+  .brand small{display:block;font-weight:600;font-size:10.5px;color:var(--mut);letter-spacing:.07em;margin-top:2px}
+  .scorechip{background:#fdf3e7;border:1.5px solid #e4c493;color:#7c4a12;font-weight:800;font-size:12.5px;padding:8px 11px;border-radius:999px;white-space:nowrap}
+  main{max-width:640px;margin:0 auto;padding:20px 16px 40px}
+  h1{font-size:27px;line-height:1.18;letter-spacing:-.01em;color:var(--ink)}
+  h1 em{font-style:normal;color:var(--accent)}
+  .sub{color:var(--mut);font-size:15px;margin-top:8px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:20px;box-shadow:0 1px 3px rgba(20,30,40,.05)}
+  .step{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .stepnum{background:var(--accent);color:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;flex:0 0 auto}
+  .step h2{font-size:18px}
+  .ba{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:#ddd;touch-action:none;user-select:none;-webkit-user-select:none}
+  .ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+  .ba .afterWrap{position:absolute;inset:0}
+  .ba .divider{position:absolute;top:0;bottom:0;width:3px;background:#fff;box-shadow:0 0 8px rgba(0,0,0,.45);transform:translateX(-50%);z-index:3}
+  .ba .knob{position:absolute;top:50%;width:42px;height:42px;border-radius:50%;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.4);transform:translate(-50%,-50%);z-index:4;display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:900;font-size:15px}
+  .tag{position:absolute;top:10px;font-size:11px;font-weight:800;letter-spacing:.1em;padding:5px 9px;border-radius:6px;z-index:2;color:#fff}
+  .tag.before{left:10px;background:rgba(20,12,8,.72)} .tag.after{right:10px;background:var(--accent)}
+  .caption{font-size:12.5px;color:var(--mut);margin-top:10px}
+  .slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+  .slot{position:relative;border:1.5px dashed #c9c2b2;border-radius:10px;aspect-ratio:1;background:#faf8f4;display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;font-weight:700;color:var(--mut);cursor:pointer;overflow:hidden;padding:4px}
+  .slot.filled{border-style:solid;border-color:var(--accent2)}
+  .slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .slot input{display:none}
+  .planslot{grid-column:span 4;aspect-ratio:auto;padding:12px}
+  .dims{display:flex;gap:10px;margin-top:12px;align-items:flex-end;flex-wrap:wrap}
+  .dims label{flex:1;font-size:12.5px;font-weight:700;color:var(--ink);min-width:100px}
+  .dims .sq{font-size:13px;color:var(--mut);padding-bottom:12px;white-space:nowrap}
+  input[type=text],input[type=tel],input[type=number],select,textarea{width:100%;font-size:16px;padding:12px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);appearance:none;margin-top:5px}
+  select{background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231d2329' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+  label.fl{display:block;font-size:13px;font-weight:700;margin:14px 0 0}
+  .looks{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:6px}
+  .look{border:2px solid var(--line);border-radius:12px;overflow:hidden;cursor:pointer;background:#fff;padding:0;text-align:left}
+  .look img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+  .look b{display:block;font-size:12.5px;padding:7px 8px 2px}
+  .look span{display:block;font-size:11px;color:var(--mut);padding:0 8px 8px}
+  .look.on{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent) inset}
+  .rangebox{margin-top:18px;background:#fdf6ec;border:1.5px solid #e4c493;border-radius:12px;padding:16px;text-align:center}
+  .rangebox .lbl{font-size:12px;font-weight:800;letter-spacing:.12em;color:#7c4a12}
+  .rangebox .val{font-size:30px;font-weight:800;margin-top:4px;letter-spacing:-.01em}
+  .rangebox .note{font-size:12.5px;color:var(--mut);margin-top:6px}
+  .sampletag{display:inline-block;margin-top:8px;font-size:11px;font-weight:800;letter-spacing:.08em;background:#7c4a12;color:#fff;border-radius:6px;padding:3px 8px}
+  .ctaRow{display:flex;gap:10px;margin-top:14px}
+  .ctaRow button{flex:1;font-size:15.5px;font-weight:700;padding:14px 10px;border-radius:10px;border:none;cursor:pointer;background:var(--accent);color:#fff}
+  .brief{display:none;margin-top:16px;border:2px solid var(--accent);border-radius:12px;overflow:hidden}
+  .brief .bhead{background:var(--accent);color:#fff;padding:12px 14px;font-weight:800;font-size:15px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .tier{font-size:12px;font-weight:900;letter-spacing:.08em;padding:5px 10px;border-radius:999px;background:#fff;color:var(--ink)}
+  .tier.hot{background:#dc2626;color:#fff}.tier.warm{background:#f59e0b;color:#fff}
+  .brief table{width:100%;border-collapse:collapse;font-size:14px}
+  .brief td{padding:8px 14px;border-top:1px solid var(--line);vertical-align:top}
+  .brief td:first-child{color:var(--mut);font-weight:700;width:38%}
+  .opener{margin:0 14px 14px;background:#f2f7f4;border:1px solid #cfe3d4;border-radius:10px;padding:11px 13px;font-size:14px}
+  .opener b{color:#14532a}
+  .scorebar{height:9px;background:#eee7da;border-radius:99px;overflow:hidden;margin:6px 14px 12px}
+  .scorebar i{display:block;height:100%;background:var(--accent2);width:0%}
+  .consultrow td{color:#b91c1c !important;font-weight:800}
+  .urgencyrow td{color:#b91c1c !important;font-weight:800}
+  footer{border-top:1px solid var(--line);padding:20px 18px 30px;text-align:center;color:var(--mut);font-size:12.5px;background:var(--card)}
+  footer b{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="ribbon">DEMO — FOR OWNER REVIEW · NOT PUBLISHED</div>
+
+<div class="brandswitch">
+  <span>VIEW AS:</span>
+  <button id="btnOffshore" class="on" type="button">Offshore Construction</button>
+  <button id="btnWL" type="button">White-label (sell to contractors)</button>
+</div>
+
+<header class="top">
+  <div class="brand"><span data-brand="name">OFFSHORE CONSTRUCTION</span><small data-brand="tag">FLOORING · KITCHEN · BATH — NEW JERSEY</small></div>
+  <div class="scorechip">Lead score: <span id="scoreTop">20</span></div>
+</header>
+
+<main>
+  <h1>See your rooms with <em>brand-new floors.</em></h1>
+  <p class="sub">Show us your floors, tap a material, and get a ballpark range — about two minutes, no obligation.</p>
+
+  <section class="card">
+    <div class="step"><div class="stepnum">1</div><h2>Your floors today</h2></div>
+    <div class="ba" id="ba">
+      <img src="__BEFORE__" alt="Current condition (sample)">
+      <div class="afterWrap" id="afterWrap"><img id="afterImg" src="__1__" alt="Redesigned preview (AI preview)"></div>
+      <span class="tag before">TODAY</span><span class="tag after">YOUR DESIGN</span>
+      <div class="divider" id="divider"></div><div class="knob" id="knob">&#8249;&#8250;</div>
+    </div>
+    <p class="caption">Sample room. In the live version these are <b>your</b> rooms, refloored on screen as you tap options below. AI preview for inspiration — not a construction drawing.</p>
+    <div class="slots">
+      <label class="slot filled" id="slot0"><img src="__BEFORE__" alt="">Main angle ✓<input type="file" accept="image/*" data-slot="0"></label>
+      <label class="slot">+ Second room<input type="file" accept="image/*" data-slot="1"></label>
+      <label class="slot">+ Hallway<input type="file" accept="image/*" data-slot="2"></label>
+      <label class="slot">+ Worst wear spot<input type="file" accept="image/*" data-slot="3"></label>
+    </div>
+    <div class="dims">
+      <label>Area to refloor — total sq ft<input type="number" id="inSqft" min="50" max="6000" placeholder="800"></label>
+      <label>Rooms<input type="number" id="inRooms" min="1" max="30" placeholder="4"></label>
+      <div class="sq" id="sqOut">≈ — sq ft</div>
+    </div>
+    
+  </section>
+
+  <section class="card">
+    <div class="step"><div class="stepnum">2</div><h2>Design it</h2></div>
+    <label class="fl">Pick a floor look</label>
+    <div class="looks">
+      <button class="look on" type="button" data-look="oak"><img src="__1__" alt="Hardwood Oak look"><b>Hardwood Oak</b><span>Real wood · timeless</span></button>
+      <button class="look" type="button" data-look="lvp"><img src="__2__" alt="Luxury Vinyl Plank look"><b>Luxury Vinyl Plank</b><span>Waterproof · kid & pet proof</span></button>
+      <button class="look" type="button" data-look="tile"><img src="__3__" alt="Large-Format Tile look"><b>Large-Format Tile</b><span>Modern · cool underfoot</span></button>
+    </div>
+    <label class="fl" for="optMat">Flooring material</label>
+<select id="optMat">
+<option value="hardwood" selected>Hardwood</option>
+<option value="lvp">Luxury vinyl plank (LVP)</option>
+<option value="laminate">Laminate</option>
+<option value="tile">Tile</option>
+<option value="carpet">Carpet</option>
+</select>
+    <label class="fl" for="optRem">Remove the old flooring?</label>
+<select id="optRem">
+<option value="yes" selected>Yes — remove & haul away</option>
+<option value="no">No — floor over it where possible</option>
+</select>
+    <label class="fl" for="optSub">Subfloor condition</label>
+<select id="optSub">
+<option value="none" selected>Solid — no repairs expected</option>
+<option value="some">Some soft / squeaky spots to repair</option>
+</select>
+    <label class="fl" for="optStairs">Stairs included?</label>
+<select id="optStairs">
+<option value="none" selected>No stairs</option>
+<option value="one">One staircase</option>
+<option value="two">Two staircases</option>
+</select>
+    <label class="fl" for="optStruct">Floor plan</label>
+<select id="optStruct">
+<option value="keep" selected>Keep rooms as they are</option>
+<option value="open">Open up rooms / remove a wall (design consult)</option>
+</select>
+  </section>
+
+  <section class="card">
+    <div class="step"><div class="stepnum">3</div><h2>Your ballpark</h2></div>
+    <div class="rangebox">
+      <div class="lbl">ESTIMATED RANGE FOR YOUR PROJECT</div>
+      <div class="val" id="rangeVal">—</div>
+      <div class="note" id="deriveNote"></div>
+      <div class="note">A planning range — <b>not a quote</b>. Your firm price comes after a free site visit.</div>
+      <span class="sampletag">SAMPLE RANGES — DEMO ONLY · OWNER'S PRICE BOOK GOES HERE BEFORE LAUNCH</span>
+    </div>
+    <label class="fl" for="optTime">When are you hoping to start?</label>
+    <select id="optTime">
+      <option value="asap">As soon as possible</option>
+      <option value="1-3" selected>Within 1–3 months</option>
+      <option value="3-6">Within 3–6 months</option>
+      <option value="research">Just researching for now</option>
+    </select>
+    <label class="fl" for="optBud">Budget you're comfortable with</label>
+    <select id="optBud">
+      <option value="b1">Under $5K</option>
+      <option value="b2" selected>$5K – $10K</option>
+      <option value="b3">$10K – $20K</option>
+      <option value="b4">$20K+</option>
+    </select>
+  </section>
+
+  <section class="card">
+    <div class="step"><div class="stepnum">4</div><h2>Unlock your designs + visit</h2></div>
+    <label class="fl" for="nm">Name</label>
+    <input type="text" id="nm" autocomplete="name" placeholder="Your name">
+    <label class="fl" for="ph">Phone</label>
+    <input type="tel" id="ph" autocomplete="tel" placeholder="(   )   -    ">
+    <label class="fl" for="ad">Property address</label>
+    <input type="text" id="ad" autocomplete="street-address" placeholder="Street, Town">
+    <div class="ctaRow"><button id="sendBtn" type="button">Send my designs &amp; book my visit</button></div>
+
+    <div class="brief" id="brief">
+      <div class="bhead"><span>WHAT THE CONTRACTOR RECEIVES</span><span class="tier" id="tierChip">—</span></div>
+      <div class="scorebar"><i id="scoreFill"></i></div>
+      <table id="briefTable"></table>
+      <div class="opener"><b>First line for the call:</b> <span id="openerText"></span></div>
+      <p class="caption" style="padding:0 14px 12px">Demo only — nothing was sent. In production this brief lands in the CRM with the homeowner's photos attached.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <b data-brand="name">OFFSHORE CONSTRUCTION</b> · <span data-brand="foot">Flooring, kitchens and full-home remodeling across New Jersey</span><br>
+  <span data-brand="powered"></span>Ballpark ranges are for planning only and are not quotes or offers.
+</footer>
+
+<script>
+  var BRANDS={
+    offshore:{name:'OFFSHORE CONSTRUCTION', tag:'FLOORING · KITCHEN · BATH — NEW JERSEY',
+      foot:'Flooring, kitchens and full-home remodeling across New Jersey', powered:''},
+    wl:{name:'[YOUR COMPANY HERE]', tag:'FLOORING & REMODELING',
+      foot:'This exact funnel, wearing your brand — your colors, your prices, your leads', powered:'Powered by Aoma AI · '}
+  };
+  function setBrand(k){ document.body.classList.toggle('wl', k==='wl');
+    document.querySelectorAll('[data-brand]').forEach(function(el){ el.innerHTML=BRANDS[k][el.dataset.brand]; });
+    document.getElementById('btnOffshore').classList.toggle('on', k==='offshore');
+    document.getElementById('btnWL').classList.toggle('on', k==='wl'); }
+  document.getElementById('btnOffshore').addEventListener('click',function(){setBrand('offshore');});
+  document.getElementById('btnWL').addEventListener('click',function(){setBrand('wl');});
+
+  var ba=document.getElementById('ba'), wrap=document.getElementById('afterWrap'),
+      div=document.getElementById('divider'), knob=document.getElementById('knob');
+  function setPos(p){ p=Math.max(2,Math.min(98,p)); wrap.style.clipPath='inset(0 0 0 '+p+'%)'; div.style.left=p+'%'; knob.style.left=p+'%'; }
+  function fromEvent(e){ var r=ba.getBoundingClientRect(); setPos((e.clientX-r.left)/r.width*100); }
+  var dragging=false;
+  ba.addEventListener('pointerdown',function(e){dragging=true;ba.setPointerCapture(e.pointerId);fromEvent(e);});
+  ba.addEventListener('pointermove',function(e){ if(dragging) fromEvent(e); });
+  ba.addEventListener('pointerup',function(){dragging=false;});
+  ba.addEventListener('pointercancel',function(){dragging=false;});
+  setPos(50);
+
+  var LOOKS={oak:{img:'__1__', name:'Hardwood Oak'}, lvp:{img:'__2__', name:'Luxury Vinyl Plank'}, tile:{img:'__3__', name:'Large-Format Tile'}};
+  var curLook='oak';
+  document.querySelectorAll('.look').forEach(function(btn){ btn.addEventListener('click',function(){
+    document.querySelectorAll('.look').forEach(function(b){b.classList.remove('on');});
+    btn.classList.add('on'); curLook=btn.dataset.look;
+    document.getElementById('afterImg').src=LOOKS[curLook].img; setPos(38);  refresh(); }); });
+
+  var photosFilled=1, planFilled=false;
+  document.querySelectorAll('.slot input').forEach(function(inp){ inp.addEventListener('change',function(){
+    var slot=inp.closest('.slot'); if(!inp.files||!inp.files[0]) return;
+    if(inp.dataset.slot==='plan'){ planFilled=true; slot.classList.add('filled'); }
+    else { slot.classList.add('filled');
+      if(inp.dataset.slot!=='0'){ var im=document.createElement('img'); im.src=URL.createObjectURL(inp.files[0]); slot.appendChild(im); photosFilled++; } }
+    refresh(); }); });
+
+  var $=function(id){return document.getElementById(id);};
+  function fmt(n){ return '$'+Math.round(n).toLocaleString('en-US'); }
+  function rnd(n){ return Math.round(n/50)*50; }
+
+  /* ---------- measure + SAMPLE price model (demo only) ---------- */
+
+  function measure(){ var s=+$('inSqft').value||800;
+    window.__deriveText='Priced per sq ft of new floor: <b>'+s.toLocaleString()+' sq ft</b> × the material rate below.';
+    return {qty:s, label:'≈ '+s.toLocaleString()+' sq ft across '+($('inRooms').value||'4')+' room(s)',
+      given: $('inSqft').value!==''}; }
+  var PRICE={ mat:{hardwood:[9,15], lvp:[4.5,8], laminate:[3.5,6.5], tile:[10,18], carpet:[3,6]},
+              rem:{yes:[1,2.5], no:[0,0]}, sub:{none:[0,0], some:[1.5,3]},
+              stairs:{none:[0,0], one:[800,1600], two:[1600,3200]} };
+  function estimate(){ var q=measure().qty, lo=0, hi=0;
+    var rows=[['mat','optMat',q],['rem','optRem',q],['sub','optSub',q],['stairs','optStairs',1]];
+    rows.forEach(function(r){ var v=PRICE[r[0]][$(r[1]).value]; lo+=v[0]*r[2]; hi+=v[1]*r[2]; });
+    return [rnd(lo), rnd(hi)]; }
+
+
+  function consultActive(){ return $('optStruct').value==='open'; }
+  function score(){ var s=5 + photosFilled*8 + (measure().given||planFilled?12:0) + 15
+      + (consultActive()?10:0)
+      + ({asap:25,'1-3':20,'3-6':8,research:0})[$('optTime').value]
+      + ({b1:3,b2:8,b3:15,b4:20})[$('optBud').value];
+    return Math.min(100,s); }
+  function tier(s){ return s>=70?['HOT','hot']:s>=40?['WARM','warm']:['EARLY','']; }
+
+  function refresh(){ var e=estimate(); $('rangeVal').textContent=fmt(e[0])+' – '+fmt(e[1]);
+    var dn=$('deriveNote'); if(dn && window.__deriveText) dn.innerHTML=window.__deriveText;
+    $('scoreTop').textContent=score(); }
+  ["optMat", "optRem", "optSub", "optStairs", "optStruct", "optTime", "optBud"].forEach(function(id){ var el=$(id); if(el) el.addEventListener('change',refresh); });
+  ["inSqft", "inRooms"].forEach(function(id){ var el=$(id); if(el) el.addEventListener('input',refresh); });
+  
+  refresh();
+
+  $('sendBtn').addEventListener('click',function(){
+    var nm=$('nm').value.trim(), ph=$('ph').value.trim();
+    if(!nm||!ph){ alert('Please add your name and phone so we can send your designs and book the visit.'); return; }
+    var e=estimate(), s=score(), t=tier(s), first=nm.split(' ')[0];
+    var opt=function(id){ var el=$(id); return el.options[el.selectedIndex].text; };
+    var m=measure();
+    var rows=[['Homeowner', nm],['Phone', ph],['Property', $('ad').value.trim()||'—'],
+      ['Design look', LOOKS[curLook].name],
+      ['Material', opt('optMat')],['Old floor removal', opt('optRem')],['Subfloor', opt('optSub')],['Stairs', opt('optStairs')],['Floor plan', opt('optStruct')],['Rooms', $('inRooms').value||'—'],
+      ['Project size', m.label],['Photos', photosFilled+' photo(s)'+(planFilled?' + extra docs':'')],
+      ['Ballpark shown', fmt(e[0])+' – '+fmt(e[1])],['Timeline', opt('optTime')],['Budget comfort', opt('optBud')],
+      ['Lead score', s+' / 100']];
+    if(consultActive()) rows.push(['⚠ DESIGN CONSULT','YES — structural / layout change selected. Book a design consult, not just a measure visit.']);
+    
+    $('briefTable').innerHTML=rows.map(function(r){var cls=(r[0].indexOf('⚠')===0||r[0].indexOf('URGENCY')===0)?' class="'+(r[0].indexOf('⚠')===0?'consultrow':'urgencyrow')+'"':''; return '<tr'+cls+'><td>'+r[0]+'</td><td>'+r[1]+'</td></tr>';}).join('');
+    var chip=$('tierChip'); chip.textContent=t[0]+' LEAD'; chip.className='tier '+t[1];
+    $('scoreFill').style.width=s+'%';
+    $('openerText').textContent='“Hi '+first+' — I saw the '+LOOKS[curLook].name.toLowerCase()+' floors you picked. Want me to come measure the rooms and firm up that number for you?”';
+    var b=$('brief'); b.style.display='block'; b.scrollIntoView({behavior:'smooth',block:'center'}); });
+</script>
+</body>
+</html>

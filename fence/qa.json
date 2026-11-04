@@ -1,0 +1,12 @@
+{
+ "slug": "fence",
+ "consult": [
+  "optStruct",
+  "move"
+ ],
+ "size": {
+  "id": "inLF",
+  "value": "200",
+  "kind": "input"
+ }
+}

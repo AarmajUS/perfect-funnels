@@ -1,0 +1,12 @@
+{
+ "slug": "gutters",
+ "consult": [
+  "optStruct",
+  "move"
+ ],
+ "size": {
+  "id": "inSqft",
+  "value": "2600",
+  "kind": "input"
+ }
+}

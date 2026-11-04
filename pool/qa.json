@@ -1,0 +1,12 @@
+{
+ "slug": "pool",
+ "consult": [
+  "optStruct",
+  "custom"
+ ],
+ "size": {
+  "id": "inDeck",
+  "value": "600",
+  "kind": "input"
+ }
+}

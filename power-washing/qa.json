@@ -1,0 +1,12 @@
+{
+ "slug": "power-washing",
+ "consult": [
+  "optStruct",
+  "stain"
+ ],
+ "size": {
+  "id": "inSqft",
+  "value": "2800",
+  "kind": "input"
+ }
+}

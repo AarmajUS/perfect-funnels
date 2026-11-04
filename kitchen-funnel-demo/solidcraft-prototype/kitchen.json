@@ -1,0 +1,550 @@
+{
+  "format": "solidcraft/45",
+  "name": "kitchen",
+  "units": "mm",
+  "params": [
+    {
+      "name": "room_x",
+      "expr": "3657.6 mm",
+      "unit": "mm",
+      "model": false
+    },
+    {
+      "name": "room_y",
+      "expr": "3048 mm",
+      "unit": "mm",
+      "model": false
+    },
+    {
+      "name": "ceiling_h",
+      "expr": "2438.4 mm",
+      "unit": "mm",
+      "model": false
+    }
+  ],
+  "features": [
+    {
+      "id": 1,
+      "name": "Floor",
+      "suppressed": false,
+      "body_names": [
+        "Floor"
+      ],
+      "param_names": [
+        "d1",
+        "d2",
+        "d3"
+      ],
+      "type": "box",
+      "corner": [
+        0.0,
+        0.0,
+        -50.8
+      ],
+      "length": "room_x",
+      "width": "room_y",
+      "height": "50.8",
+      "operation": "new_body"
+    },
+    {
+      "id": 2,
+      "name": "Wall_South",
+      "suppressed": false,
+      "body_names": [
+        "Wall_South"
+      ],
+      "param_names": [
+        "d4",
+        "d5",
+        "d6"
+      ],
+      "type": "box",
+      "corner": [
+        0.0,
+        -152.4,
+        0.0
+      ],
+      "length": "room_x",
+      "width": "152.4",
+      "height": "ceiling_h",
+      "operation": "new_body"
+    },
+    {
+      "id": 3,
+      "name": "Wall_West",
+      "suppressed": false,
+      "body_names": [
+        "Wall_West"
+      ],
+      "param_names": [
+        "d7",
+        "d8",
+        "d9"
+      ],
+      "type": "box",
+      "corner": [
+        -152.4,
+        0.0,
+        0.0
+      ],
+      "length": "152.4",
+      "width": "room_y",
+      "height": "ceiling_h",
+      "operation": "new_body"
+    },
+    {
+      "id": 4,
+      "name": "Base_South_West",
+      "suppressed": false,
+      "body_names": [
+        "Base_South_West"
+      ],
+      "param_names": [
+        "d10",
+        "d11",
+        "d12"
+      ],
+      "type": "box",
+      "corner": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "length": "1371.6",
+      "width": "609.5999999999999",
+      "height": "876.3",
+      "operation": "new_body"
+    },
+    {
+      "id": 5,
+      "name": "Base_Sink",
+      "suppressed": false,
+      "body_names": [
+        "Base_Sink"
+      ],
+      "param_names": [
+        "d13",
+        "d14",
+        "d15"
+      ],
+      "type": "box",
+      "corner": [
+        1371.6,
+        0.0,
+        0.0
+      ],
+      "length": "914.4",
+      "width": "609.5999999999999",
+      "height": "876.3",
+      "operation": "new_body"
+    },
+    {
+      "id": 6,
+      "name": "Base_South_East",
+      "suppressed": false,
+      "body_names": [
+        "Base_South_East"
+      ],
+      "param_names": [
+        "d16",
+        "d17",
+        "d18"
+      ],
+      "type": "box",
+      "corner": [
+        3048.0,
+        0.0,
+        0.0
+      ],
+      "length": "609.5999999999999",
+      "width": "609.5999999999999",
+      "height": "876.3",
+      "operation": "new_body"
+    },
+    {
+      "id": 7,
+      "name": "Base_Return",
+      "suppressed": false,
+      "body_names": [
+        "Base_Return"
+      ],
+      "param_names": [
+        "d19",
+        "d20",
+        "d21"
+      ],
+      "type": "box",
+      "corner": [
+        0.0,
+        609.5999999999999,
+        0.0
+      ],
+      "length": "609.5999999999999",
+      "width": "1524",
+      "height": "876.3",
+      "operation": "new_body"
+    },
+    {
+      "id": 8,
+      "name": "Counter_Corner",
+      "suppressed": false,
+      "body_names": [
+        "Counter_Corner"
+      ],
+      "param_names": [
+        "d22",
+        "d23",
+        "d24"
+      ],
+      "type": "box",
+      "corner": [
+        0.0,
+        0.0,
+        876.3
+      ],
+      "length": "635",
+      "width": "609.5999999999999",
+      "height": "38.099999999999994",
+      "operation": "new_body"
+    },
+    {
+      "id": 9,
+      "name": "Counter_South",
+      "suppressed": false,
+      "body_names": [
+        "Counter_South"
+      ],
+      "param_names": [
+        "d25",
+        "d26",
+        "d27"
+      ],
+      "type": "box",
+      "corner": [
+        635.0,
+        0.0,
+        876.3
+      ],
+      "length": "1651",
+      "width": "635",
+      "height": "38.099999999999994",
+      "operation": "new_body"
+    },
+    {
+      "id": 10,
+      "name": "Counter_South_East",
+      "suppressed": false,
+      "body_names": [
+        "Counter_South_East"
+      ],
+      "param_names": [
+        "d28",
+        "d29",
+        "d30"
+      ],
+      "type": "box",
+      "corner": [
+        3048.0,
+        0.0,
+        876.3
+      ],
+      "length": "609.5999999999999",
+      "width": "635",
+      "height": "38.099999999999994",
+      "operation": "new_body"
+    },
+    {
+      "id": 11,
+      "name": "Counter_Return",
+      "suppressed": false,
+      "body_names": [
+        "Counter_Return"
+      ],
+      "param_names": [
+        "d31",
+        "d32",
+        "d33"
+      ],
+      "type": "box",
+      "corner": [
+        0.0,
+        609.5999999999999,
+        876.3
+      ],
+      "length": "635",
+      "width": "1524",
+      "height": "38.099999999999994",
+      "operation": "new_body"
+    },
+    {
+      "id": 12,
+      "name": "SinkCut",
+      "suppressed": false,
+      "body_names": [
+        "SinkCut"
+      ],
+      "param_names": [
+        "d34",
+        "d35",
+        "d36"
+      ],
+      "participants": [
+        "Counter_South"
+      ],
+      "type": "box",
+      "corner": [
+        1447.8,
+        101.6,
+        850.0
+      ],
+      "length": "762",
+      "width": "406.4",
+      "height": "200",
+      "operation": "cut"
+    },
+    {
+      "id": 13,
+      "name": "Sink_Basin",
+      "suppressed": false,
+      "body_names": [
+        "Sink_Basin"
+      ],
+      "param_names": [
+        "d37",
+        "d38",
+        "d39"
+      ],
+      "type": "box",
+      "corner": [
+        1447.8,
+        101.6,
+        685.8
+      ],
+      "length": "762",
+      "width": "406.4",
+      "height": "228.6",
+      "operation": "new_body"
+    },
+    {
+      "id": 14,
+      "name": "Range",
+      "suppressed": false,
+      "body_names": [
+        "Range"
+      ],
+      "param_names": [
+        "d40",
+        "d41",
+        "d42"
+      ],
+      "type": "box",
+      "corner": [
+        2286.0,
+        0.0,
+        0.0
+      ],
+      "length": "762",
+      "width": "635",
+      "height": "914.4",
+      "operation": "new_body"
+    },
+    {
+      "id": 15,
+      "name": "Burner1",
+      "suppressed": false,
+      "body_names": [
+        "Burner1"
+      ],
+      "param_names": [
+        "d43",
+        "d44"
+      ],
+      "type": "cylinder",
+      "base": [
+        2463.7999999999997,
+        177.79999999999998,
+        914.4
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "radius": "(152.39999999999998 mm) / 2",
+      "height": "12.7",
+      "operation": "new_body"
+    },
+    {
+      "id": 16,
+      "name": "Burner2",
+      "suppressed": false,
+      "body_names": [
+        "Burner2"
+      ],
+      "param_names": [
+        "d45",
+        "d46"
+      ],
+      "type": "cylinder",
+      "base": [
+        2463.7999999999997,
+        457.2,
+        914.4
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "radius": "(114.3 mm) / 2",
+      "height": "12.7",
+      "operation": "new_body"
+    },
+    {
+      "id": 17,
+      "name": "Burner3",
+      "suppressed": false,
+      "body_names": [
+        "Burner3"
+      ],
+      "param_names": [
+        "d47",
+        "d48"
+      ],
+      "type": "cylinder",
+      "base": [
+        2870.2,
+        177.79999999999998,
+        914.4
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "radius": "(114.3 mm) / 2",
+      "height": "12.7",
+      "operation": "new_body"
+    },
+    {
+      "id": 18,
+      "name": "Burner4",
+      "suppressed": false,
+      "body_names": [
+        "Burner4"
+      ],
+      "param_names": [
+        "d49",
+        "d50"
+      ],
+      "type": "cylinder",
+      "base": [
+        2870.2,
+        457.2,
+        914.4
+      ],
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "radius": "(152.39999999999998 mm) / 2",
+      "height": "12.7",
+      "operation": "new_body"
+    },
+    {
+      "id": 19,
+      "name": "Fridge",
+      "suppressed": false,
+      "body_names": [
+        "Fridge"
+      ],
+      "param_names": [
+        "d51",
+        "d52",
+        "d53"
+      ],
+      "type": "box",
+      "corner": [
+        0.0,
+        2133.6,
+        0.0
+      ],
+      "length": "762",
+      "width": "914.4",
+      "height": "1778",
+      "operation": "new_body"
+    },
+    {
+      "id": 20,
+      "name": "WallCab_South_West",
+      "suppressed": false,
+      "body_names": [
+        "WallCab_South_West"
+      ],
+      "param_names": [
+        "d54",
+        "d55",
+        "d56"
+      ],
+      "type": "box",
+      "corner": [
+        0.0,
+        0.0,
+        1371.6
+      ],
+      "length": "1371.6",
+      "width": "304.79999999999995",
+      "height": "762",
+      "operation": "new_body"
+    },
+    {
+      "id": 21,
+      "name": "WallCab_South_East",
+      "suppressed": false,
+      "body_names": [
+        "WallCab_South_East"
+      ],
+      "param_names": [
+        "d57",
+        "d58",
+        "d59"
+      ],
+      "type": "box",
+      "corner": [
+        3048.0,
+        0.0,
+        1371.6
+      ],
+      "length": "609.5999999999999",
+      "width": "304.79999999999995",
+      "height": "762",
+      "operation": "new_body"
+    },
+    {
+      "id": 22,
+      "name": "WallCab_Return",
+      "suppressed": false,
+      "body_names": [
+        "WallCab_Return"
+      ],
+      "param_names": [
+        "d60",
+        "d61",
+        "d62"
+      ],
+      "type": "box",
+      "corner": [
+        0.0,
+        609.5999999999999,
+        1371.6
+      ],
+      "length": "304.79999999999995",
+      "width": "1524",
+      "height": "762",
+      "operation": "new_body"
+    }
+  ],
+  "next_id": 23,
+  "next_component_color_index": 0
+}

@@ -1,0 +1,12 @@
+{
+ "slug": "deck-porch",
+ "consult": [
+  "optStruct",
+  "extend"
+ ],
+ "size": {
+  "id": "inL",
+  "value": "24",
+  "kind": "input"
+ }
+}
